@@ -1,0 +1,102 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"> </script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+	
+	<script src="training.js"></script>
+
+</head>
+<style>
+    #body{
+        background-color: #fff;
+    }
+    .main{
+        border: solid 1px #d8d8d8;
+        padding: 40px;
+        border-radius: 10px;
+    }
+    #preloader{
+        width: 100%;
+	    height: 100%;
+        padding-top: 200px;
+        background: #fff;
+        overflow:hidden;
+        position:fixed;
+        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    input{
+        float: right;
+        border: none;
+        outline: none;
+        border-bottom: solid 1px #000;
+        text-align: center;
+    }
+    label{
+        float: left;
+        color: red;
+        font-size: 18px;
+    }
+    #getResult{
+        padding: 5px 15px;
+        border: none;
+        background: #adadad;
+        cursor: pointer;
+        outline: none;
+    }
+    .p {
+        margin-top: 20px;
+        text-align: center;
+        color: #000;
+    }
+    .p1 {
+        text-align: center;
+        color: #000;
+        font-size: 25px;
+    }
+    #percent{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media(max-width: 600px){
+        input{
+            float: none;
+        }
+        label{
+            float: none;
+        }
+    }
+</style>
+<body id="body">
+    <div id="preloader">
+        <div class="p1">TƯ VẤN CHỌN CHUYÊN NGÀNH CHO SINH VIÊN NGÀNH CNTT</div>
+		<div class="p">Data is training, please wait! ...
+			<p id="percent"></p>
+		</div>
+	</div>
+    <div class="main" style="width:50%;margin: 0px auto; text-align: center;">
+        <label>Nhập môn lập trình</label>
+        <input type="text" id="inputNMLT" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <label>Cấu trúc dữ liệu và giải thuật</label>
+        <input type="text" id="inputCTDL" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <label>Cơ sở dữ liệu</label>
+        <input type="text" id="inputCSDL" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <label>Hệ quản trị cơ sở dữ liệu</label>
+        <input type="text" id="inputHEQT" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <label>Mạng máy tính</label>
+        <input type="text" id="inputMMT" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <label>Kỹ thuật lập trình</label>
+        <input type="text" id="inputKTLT" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <label>Kiến trúc máy tính</label>
+        <input type="text" id="inputKTMT" onkeypress="return fun_AllowOnlyAmountAndDot(this.id);"><br><br>
+        <button id="getResult">OK</button><br>
+    </div>
+</body>
+</html>

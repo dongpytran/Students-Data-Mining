@@ -16,4 +16,5 @@ Xây dựng mạng neural nhân tạo tư vấn sinh viên cntt chọn chuyên n
 - IDE : Visual Studio
 - Extension : Live Server
 - Open project and run the index.html file with live server.
+
 Thanks for reading !
